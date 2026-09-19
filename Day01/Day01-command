@@ -1,1 +1,30 @@
+$ pwd
 /home/shrutika_s_patankar/Linux-Practice/Day01
+
+$ cd ~/Linux-Practice
+$pwd
+/home/shrutika_s_patankar/Linux-Practice
+
+
+$ cd ..
+/home/shrutika_s_patankar
+
+$ cd ~/Linux-Practice
+$ cd Day01
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day01
+
+$ cd ../..
+$ pwd 
+/home/shrutika_s_patankar
+
+$ ls 
+Day01-command	README.md	scripts,notes}
+
+$ ls -la 
+total 20
+drwxr-xr-x  3 shrutika_s_patankar shrutika_s_patankar 4096 Sep 19 03:24 .
+drwxr-xr-x 33 shrutika_s_patankar shrutika_s_patankar 4096 Sep 17 15:25 ..
+-rw-r--r--  1 shrutika_s_patankar shrutika_s_patankar  337 Sep 19 03:24 Day01-command
+-rw-r--r--  1 shrutika_s_patankar shrutika_s_patankar  754 Sep 17 02:58 README.md
+drwxr-xr-x  2 shrutika_s_patankar shrutika_s_patankar 4096 Sep 16 10:50 scripts,notes}
