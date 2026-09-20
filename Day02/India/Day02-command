@@ -1,0 +1,56 @@
+$ touch Day02-command
+$ touch README.md
+
+$ mkdir -p India/{MH, UP, MP}
+$ cd India
+
+# To know in which directory we are working
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cd {MH,
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/{MH, 
+
+# Create files to do copy opration (cp)
+$ touch abc.txt def.txt ghi.txt hjk.tx
+$ ls 
+adc.txt		def.txt		 ghi.txt
+
+## Copy the files 
+# If we are not in that directory / In main directory (India)
+
+$ cd India 
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cp {MH,/abc.txt UP/
+$ cd UP
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/UP
+
+$ ls 
+abc.txt 
+
+# If we are in the directory / In {MH,
+$ cd ..
+$ cd {MH,
+$ cp def.txt ../UP/
+
+$ cd ..
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cd UP 
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/UP
+$ ls 
+abc.txt		def.txt 
+
+# To Copy directory 
+$ cd ..
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cd -r {MH, MP/
+$ cd MP
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/MP
+$ ls 
+{MH,

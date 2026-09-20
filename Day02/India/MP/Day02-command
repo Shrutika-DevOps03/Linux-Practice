@@ -1,0 +1,10 @@
+$ touch Day02-command 
+$ touch README.d
+
+$ mkdir -p India/{MH, UP, MP}
+
+$ cd India 
+$ pwd
+
+
+

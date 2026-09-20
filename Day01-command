@@ -1,0 +1,14 @@
+# pwd - Prsent Working Directory
+
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day01
+
+$ cd ..
+
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice
+
+$ cd ../..
+
+$ pwd
+/home/shrutika_s_patankar

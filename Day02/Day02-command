@@ -1,0 +1,115 @@
+$ touch Day02-command
+$ touch README.md
+
+$ mkdir -p India/{MH, UP, MP}
+$ cd India
+
+# To know in which directory we are working
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cd {MH,
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/{MH,
+
+# Create files to do copy opration (cp)
+$ touch abc.txt def.txt ghi.txt hjk.tx
+$ ls
+adc.txt         def.txt          ghi.txt
+
+## Copy the files and directory :
+# If we are not in that directory / In main directory (India)
+
+$ cd India
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cp {MH,/abc.txt UP/
+$ cd UP
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/UP
+
+$ ls
+abc.txt
+
+# If we are in the directory / In {MH,
+$ cd ..
+$ cd {MH,
+$ cp def.txt ../UP/
+
+$ cd ..
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+# Copy Directory from one Directory to another Directory
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cp -r {MH, MP/
+$ cd MP 
+$ ls 
+hjk.txt {MH,
+
+## Move the files and directory :
+
+# Copy File :
+$ cd {MH,
+$ ls 
+Day02-comand	UP	abc.txt		def.txt		hjk.txt
+
+$ mv hjk.txt ../MP/
+
+$ cd ..
+$ pwd
+$ /home/shrutika_s_patankar/Linux-Practice/Day02/India 
+$ cd MP 
+$ ls 
+Day02-command	hjk.txt		{MH,
+
+# In Move operation delete the file from it's previous location.
+
+$ cd ..
+$ cd {MH,
+$ ls 
+Day02-command	 UP	abc.txt		def.txt 
+
+# Copy Directory :
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ ls 
+MP	UP	{MH,
+
+$ mkdir Delhi 
+
+$ mv UP Delhi/
+$ cd Delhi
+$ ls 
+UP 
+
+# The Directory should delete from previous location 
+
+$ cd ..
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+$ ls 
+Delhi	MP	{MH,
+
+## Delete the file 
+
+$ cd {MH, 
+$ ls 
+Day02-comand    UP      abc.txt         def.txt         hjk.txt
+
+$ rm abc.txt
+$ ls 
+Day02-comand    UP      def.txt         hjk.txt
+
+$ cd ..
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+# Delete the directory 
+$ ls
+Delhi   MP      {MH, 
+
+$ rm -r MP 
+$ ls 
+Delhi      {MH,
