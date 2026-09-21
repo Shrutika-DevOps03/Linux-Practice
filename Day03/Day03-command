@@ -1,0 +1,64 @@
+# Create Files and Directory for Practice 
+$ touch abc.txt dce.txt
+$ mkdir User  
+
+# View Permission
+
+$ ls -l 
+total 8
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar    0 Sep 21 02:14 Day03-command
+drwxr-xr-x 2 shrutika_s_patankar shrutika_s_patankar 4096 Sep 21 02:13 User
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar    0 Sep 21 02:11 abc.txt
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar    0 Sep 21 02:11 dce.txt
+drwxr-xr-x 2 shrutika_s_patankar shrutika_s_patankar 4096 Sep 16 10:50 scripts,notes}
+
+# CHMOD - Numeric Mode (most common)
+
+$ chmod 666 abc.txt
+-rw-rw-rw- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 abc.txt
+
+$ chmod 755 abc.txt
+-rwxr-xr-x 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 abc.txt
+
+$ chmod 644 abc.txt
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 abc.txt
+
+$ chmod 777 abc.txt
+-rwxrwxrwx 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 abc.txt
+
+$ chmod 700 abc.txt
+-rwx------ 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 abc.txt
+
+$ chmod 600 abc.txt
+-rw------- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 abc.txt
+
+# CHMOD - Symbolic Mode 
+
+$ chmod u+x abc.txt
+-rwxr--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 dce.txt
+
+$ chmod g-w abc.txt
+-rwxr--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 dce.txt
+
+$ chmod o-r abc.txt
+-rwxr----- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 dce.txt
+
+$ chmod a+r abc.txt
+-rwxr--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 dce.txt
+
+$ chmod u=rwx,g=rw,o=rx abc.txt
+-rwxr-xr-x 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 21 02:11 dce.txt
+
+# CHMOD - Directory Permission
+
+$ chmod 755 User/
+drwxr-xr-x 2 shrutika_s_patankar shrutika_s_patankar 4096 Sep 21 02:13 User
+
+$ chmod 700 User/
+drwx------ 2 shrutika_s_patankar shrutika_s_patankar 4096 Sep 21 02:13 User
+
+# CHOWN - Change Ownership
+
+$ chown shreyash abc.txt
+$ls -l abc.txt 
+-rw------- 1 shreyash shrutika_s_patankar 0 Sep 21 02:11 abc.txt
