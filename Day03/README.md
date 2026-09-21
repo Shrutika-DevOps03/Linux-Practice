@@ -12,7 +12,7 @@ Difficulty: Beginner
 - Interpret permission output from `ls -l`
 
 ## Understanding Permissions Basics
-
+```
 -rwxr-xr-x  1  user  group  4096  Sep 17 10:30  file.txt
 │││││││││  │  ────  ─────
 │││││││││  └─ Link count
@@ -26,7 +26,7 @@ Permission Values:
 r (read)    = 4
 w (write)   = 2
 x (execute) = 1
-
+```
 
 ## Commands to Practice
 ```
