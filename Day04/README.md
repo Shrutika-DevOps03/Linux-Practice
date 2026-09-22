@@ -201,7 +201,7 @@ wc -l /etc/passwd                 # Count total users
 ```
 
 ## Struggle Points
-
+None
 
 ## Notes
 - Use `less` for large files (better than `more`)
