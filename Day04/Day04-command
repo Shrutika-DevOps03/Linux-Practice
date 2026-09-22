@@ -1,0 +1,428 @@
+# Create test files :
+$ touch Day04-command content.txt
+
+# Add some content in it to do Displya & Concatenate files
+$ echo "File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l" > content.txt 
+
+### Commands to Practice 
+
+## CAT - Display and Concatenate files
+
+# Basic file viewing :
+
+$ cat content.txt
+
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+$ cat content.txt Day04-command >> Day04-command 
+Error:
+cat: Day04-command: input file is output file
+
+$ touch abc.txt
+
+$ echo "Today's Learning 
+Learn cat command (concatenate and display files)
+Learn less command (paged file viewer)
+Learn more command (simple paged viewer)
+Learn head command (view first lines)
+Learn tail command (view last lines)
+Understand /etc/passwd file structure
+Combine files using cat" > abc.txt
+
+$ cat content.txt abc.txt >> Day04-command 
+
+File Viewing Commands
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+Today's Learning
+Learn cat command (concatenate and display files)
+Learn less command (paged file viewer)
+Learn more command (simple paged viewer)
+Learn head command (view first lines)
+Learn tail command (view last lines)
+Understand /etc/passwd file structure
+Combine files using cat
+
+$ cat abc.txt content.txt >> combined.txt
+
+File Viewing Commands:
+cat - Display and concatenate file
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+Today's Learning
+Learn cat command (concatenate and display files)
+Learn less command (paged file viewer)
+Learn more command (simple paged viewer)
+Learn head command (view first lines
+Learn tail command (view last lines)
+Understand /etc/passwd file structure
+Combine files using cat
+
+# CAT - options
+
+$ cat -n abc.txt
+
+     1	Today's Learning
+     2	Learn cat command (concatenate and display files)
+     3	Learn less command (paged file viewer)
+     4	Learn more command (simple paged viewer)
+     5	Learn head command (view first lines)
+     6	Learn tail command (view last lines)
+     7	Understand /etc/passwd file structure
+     8	Combine files using cat
+     9	This is new text
+
+$ cat -A abc.txt 
+
+Today's Learning$
+Learn cat command (concatenate and display files)$
+Learn less command (paged file viewer)$
+Learn more command (simple paged viewer)$
+Learn head command (view first lines)$
+Learn tail command (view last lines)$
+Understand /etc/passwd file structure$
+Combine files using cat$
+This is new text$
+
+$ cat -s abc.txt
+
+Today's Learning
+Learn cat command (concatenate and display files)
+Learn less command (paged file viewer)
+Learn more command (simple paged viewer)
+Learn head command (view first lines)
+Learn tail command (view last lines)
+Understand /etc/passwd file structure
+Combine files using cat
+
+$ cat -b abc.txt
+
+This is new text
+     1	Today's Learning
+     2	Learn cat command (concatenate and display files)
+     3	Learn less command (paged file viewer)
+     4	Learn more command (simple paged viewer)
+     5	Learn head command (view first lines)
+     6	Learn tail command (view last lines)
+     7	Understand /etc/passwd file structure
+     8	Combine files using cat
+     9	This is new text
+
+### HEAD - View First Lines
+
+# View frist 10 lines (default)
+
+$ head content.txt
+
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+
+$ head -n 5 content.txt
+
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+
+$ head -n 20 content.txt
+
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+
+# Useful for system files 
+
+$ head /etc/passwd
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+
+$ head /etc/hosts
+
+# This file was automatically generated by WSL. To stop automatic generation of this file, add the following entry to /etc/wsl.conf:
+# [network]
+# generateHosts = false
+127.0.0.1	localhost
+127.0.1.1	SHRUTIKA.localdomain	SHRUTIKA
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+
+### TAIL - View Last Lines
+
+# View last 10 lines (default)
+
+$ tail content.txt
+
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+$ tail -n 5 content.txt
+
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+$ tail -n 20 content.txt
+
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+$ tail -c 10 content.txt
+
+ith wc -l
+
+$ tail -f content.txt
+
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+$ tail -f /var/log/syslog
+
+2026-09-22T09:14:29.267555+00:00 SHRUTIKA wsl-pro-service[179]: #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Shrutika S Patankar/.ubuntupro/.address": open /mnt/c/Users/Shrutika S Patankar/.ubuntupro/.address: no such file or directory
+2026-09-22T09:15:18.103590+00:00 SHRUTIKA kernel: mini_init (93): drop_caches: 1
+2026-09-22T09:16:29.392084+00:00 SHRUTIKA wsl-pro-service[179]: message repeated 2 times: [ #033[33mWARNING#033[0m Daemon: could not connect to Windows Agent: could not get address: could not read agent port file "/mnt/c/Users/Shrutika S Patankar/.ubuntupro/.address": open /mnt/c/Users/Shrutika S Patankar/.ubuntupro/.address: no such file or directory]
+2026-09-22T09:16:29.392417+00:00 SHRUTIKA wsl-pro-service[179]: #033[33mWARNING#033[0m Exiting after <nil>: check if the Windows agent is installed and running.
+2026-09-22T09:16:29.398300+00:00 SHRUTIKA systemd[1]: wsl-pro.service: Deactivated successfully.
+2026-09-22T09:16:29.398727+00:00 SHRUTIKA systemd[1]: wsl-pro.service: Consumed 1.084s CPU time over 11min 5.540s wall clock time, 59.2M memory peak.
+2026-09-22T09:17:01.749417+00:00 SHRUTIKA CRON[616]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)
+2026-09-22T09:20:23.402910+00:00 SHRUTIKA systemd[1]: Starting systemd-tmpfiles-clean.service - Cleanup of Temporary Directories...
+2026-09-22T09:20:23.512121+00:00 SHRUTIKA systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+2026-09-22T09:20:23.512499+00:00 SHRUTIKA systemd[1]: Finished systemd-tmpfiles-clean.service - Cleanup of Temporary Directories.
+
+### LESS - Advanced Paged Viewer (Recommended)
+
+# Open file in less
+
+$ less content.file
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
+
+### MORE - Simple Paged Viewer
+
+# Open file in more
+
+$ more content.txt
+
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l

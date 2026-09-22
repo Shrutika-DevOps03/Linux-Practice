@@ -1,0 +1,9 @@
+Today's Learning
+Learn cat command (concatenate and display files)
+Learn less command (paged file viewer)
+Learn more command (simple paged viewer)
+Learn head command (view first lines)
+Learn tail command (view last lines)
+Understand /etc/passwd file structure
+Combine files using cat
+This is new text
