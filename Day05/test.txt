@@ -1,0 +1,65 @@
+Day 5: Master File Searching Commands README.md following your format.
+
+What's included:
+
+Two Powerful Search Tools:
+
+find - Comprehensive real-time search with many options
+locate - Fast database-based search
+
+FIND Options Covered:
+
+-name - Search by filename
+-iname - Case-insensitive search
+-type - Search by file/directory type
+-size - Search by file size
+-mtime/-mmin - Search by modification time
+-exec - Run commands on results
+
+Advanced Techniques:
+
+Combining multiple conditions (AND logic)
+Using -o for OR logic
+Using ! for NOT logic
+-maxdepth to limit search depth
+Piping find results with grep
+
+FIND with EXEC - Powerful but Dangerous:
+
+bash
+find /path -name "pattern" -exec command {} \;
+Read-only examples (ls, wc, grep)
+Destructive examples (rm, delete)
+Safety tips: test with -print first!
+
+LOCATE Command:
+
+Fast pattern-based search
+Uses updatedb database
+sudo updatedb to refresh
+Less flexible but much faster
+
+Safety Tips:
+
+Always test -exec rm with -print first
+Use 2>/dev/null to hide permission errors
+Use -i flag with destructive operations
+Never casually search / without filtering
+
+Practice Scenarios:
+
+Find files modified in last 24 hours
+Find large files to clean up
+Find recently changed files
+Find and count lines
+Combine find with grep
+
+Key Quick Reference:
+
+Task	Command
+Find by name	find /path -name "*.txt"
+Find by type	find /path -type f
+Find by size	find /path -size +100M
+Modified today	find /path -mtime -1
+Modified last hour	find /path -mmin -60
+Run command	find /path -exec ls {} \;

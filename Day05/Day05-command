@@ -1,0 +1,269 @@
+## Create Test Environment
+
+# Create test files for searching
+
+$ mkdir Day05
+
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day05
+
+$ touch abc.txt def.txt combined.txt content.txt
+
+$ ls 
+abc.txt def.txt combined.txt content.txt
+
+$ mkdir logs
+
+$ pwd 
+/home/shrutika_s_patankar/Linux-Practice/Day05/logs
+
+$ touch abc.log def.log ghi.log jki.log
+
+$ ls 
+abc.log def.log ghi.log jki.log
+
+## Practice Search Scenarios
+
+# Find by name
+
+$ cd ~/Linux-command
+
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice
+
+$ find Day05 -name "*.txt"  
+
+Day05/combined.txt
+Day05/def.txt
+Day05/content.txt
+Day05/test.txt
+Day05/abc.txt
+
+$ find Day05 -name "*.log"
+
+Day05/logs/abc.log
+Day05/logs/def.log
+Day05/logs/jkl.log
+Day05/logs/ghi.log
+
+$ find Day05 -iname "ABC*"
+
+Day05/logs/abc.log
+Day05/abc.txt
+
+# Find by type 
+
+$ find Day05 -type f 
+
+Day05/README.md
+Day05/logs/abc.log
+Day05/logs/def.log
+Day05/logs/jkl.log
+Day05/logs/ghi.log
+Day05/combined.txt
+Day05/Day05-command
+Day05/def.txt
+Day05/content.txt
+Day05/test.txt
+Day05/abc.txt
+
+$ find Day05 -type d
+
+Day05
+Day05/logs
+Day05/scripts,notes}
+
+# Find by size
+
+$ find Day05 -type f -size +5k
+
+Day05/README.md
+
+$ find Day05 -type f -size -5k
+
+Day05/logs/abc.log
+Day05/logs/def.log
+Day05/logs/jkl.log
+Day05/logs/ghi.log
+Day05/combined.txt
+Day05/Day05-command
+Day05/def.txt
+Day05/content.txt
+Day05/test.txt
+Day05/abc.txt 
+
+# Find by time 
+
+$ find Day05 -mtime -1
+
+Day05
+Day05/logs
+Day05/logs/abc.log
+Day05/logs/def.log
+Day05/logs/jkl.log
+Day05/logs/ghi.log
+Day05/combined.txt
+Day05/Day05-command
+Day05/def.txt
+
+$ find Day05 -mmin -15
+
+Day05
+Day05/Day05-command
+
+
+# Find on system
+
+$ find /home -name ".bashrc"
+
+/home/shrutika_s_patankar/.bashrc
+
+$ find /etc -type f -name "*.conf"
+
+/etc/environment.d/90qt-a11y.conf
+/etc/ca-certificates.conf
+/etc/debconf.conf
+/etc/landscape/client.conf
+/etc/depmod.d/ubuntu.conf
+/etc/security/pwhistory.conf
+/etc/security/sepermit.conf
+/etc/security/namespace.conf
+/etc/security/limits.conf
+/etc/security/limits.d/10-coredump-debian.conf
+/etc/security/time.conf
+/etc/security/capability.conf
+/etc/security/faillock.conf
+/etc/security/group.conf
+/etc/security/access.conf
+/etc/security/pam_env.conf
+/etc/xdg/user-dirs.conf
+/etc/xattr.conf
+/etc/deluser.conf
+/etc/rsyslog.d/21-cloudinit.conf
+/etc/rsyslog.d/50-default.conf
+/etc/fonts/fonts.conf
+/etc/fonts/conf.avail/58-dejavu-lgc-sans-mono.conf
+/etc/fonts/conf.avail/20-unhint-small-dejavu-sans.conf
+/etc/fonts/conf.avail/58-dejavu-lgc-sans.conf
+/etc/fonts/conf.avail/57-dejavu-serif.conf
+/etc/fonts/conf.avail/20-unhint-small-dejavu-sans-mono.conf
+/etc/fonts/conf.avail/20-unhint-small-dejavu-lgc-sans.conf
+/etc/fonts/conf.avail/20-unhint-small-dejavu-serif.conf
+/etc/fonts/conf.avail/57-dejavu-sans.conf
+/etc/fonts/conf.avail/58-dejavu-lgc-serif.conf
+/etc/fonts/conf.avail/57-dejavu-sans-mono.conf
+/etc/fonts/conf.avail/20-unhint-small-dejavu-lgc-serif.conf
+/etc/fonts/conf.avail/20-unhint-small-dejavu-lgc-sans-mono.conf
+/etc/PackageKit/Vendor.conf
+/etc/PackageKit/PackageKit.conf
+/etc/adduser.conf
+/etc/mke2fs.conf
+/etc/systemd/system.conf
+/etc/systemd/resolved.conf
+/etc/systemd/journald.conf
+/etc/systemd/networkd.conf
+/etc/systemd/logind.conf
+/etc/systemd/pstore.conf
+/etc/systemd/user.conf
+/etc/systemd/sleep.conf
+/etc/sudo_logsrvd.conf
+/etc/logrotate.conf
+/etc/nsswitch.conf
+/etc/host.conf
+/etc/ubuntu-advantage/uaclient.conf
+/etc/pam.conf
+/etc/locale.conf
+/etc/apport/crashdb.conf
+/etc/dhcpcd.conf
+/etc/selinux/semanage.conf
+/etc/apparmor/parser.conf
+/etc/ldap/ldap.conf
+/etc/e2scrub.conf
+/etc/chrony/conf.d/ubuntu-nts.conf
+/etc/chrony/chrony.conf
+/etc/dbus-1/system.d/com.ubuntu.SoftwareProperties.conf
+/etc/rsyslog.conf
+/etc/wsl.conf
+/etc/ucf.conf
+/etc/apt/apt.conf.d/20snapd.conf
+/etc/apt/apt.conf.d/20apt-esm-hook.conf
+/etc/ld.so.conf.d/libc.conf
+/etc/ld.so.conf.d/x86_64-linux-gnu.conf
+/etc/ld.so.conf.d/ld.wsl.conf
+/etc/udev/udev.conf
+/etc/udev/iocost.conf
+/etc/sensors3.conf
+/etc/wsl-distribution.conf
+/etc/fuse.conf
+/etc/libaudit.conf
+/etc/modprobe.d/blacklist.conf
+/etc/modprobe.d/blacklist-ath_pci.conf
+/etc/modprobe.d/blacklist-framebuffer.conf
+/etc/modprobe.d/blacklist-rare-network.conf
+/etc/modprobe.d/blacklist-firewire.conf
+/etc/modprobe.d/iwlwifi.conf
+/etc/tmpfiles.d/screen-cleanup.conf
+/etc/sudo.conf
+/etc/ld.so.conf
+/etc/gai.conf
+/etc/gtk-3.0/im-multipress.conf
+
+$ find /var/log -type f -mtime -1
+
+/var/log/dmesg
+/var/log/journal/b22128c7a50145fa9a3dd7507ded63e0/user-1000.journal
+/var/log/journal/b22128c7a50145fa9a3dd7507ded63e0/system.journal
+/var/log/wtmp
+/var/log/kern.log
+/var/log/syslog
+/var/log/auth.log
+
+## Find with Exec Examples
+
+# List Details of all files:
+
+$ find Day05 -type f -exec ls -lh {} \;
+
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 11K Sep 22 10:05 Day05/README.md
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:22 Day05/logs/abc.log
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:22 Day05/logs/def.log
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:22 Day05/logs/jkl.log
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:22 Day05/logs/ghi.log
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:16 Day05/combined.txt
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 5.1K Sep 24 10:18 Day05/Day05-command
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:13 Day05/def.txt
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 716 Sep 24 09:17 Day05/content.txt
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 1.5K Sep 24 09:04 Day05/test.txt
+-rw-r--r-- 1 shrutika_s_patankar shrutika_s_patankar 0 Sep 24 09:13 Day05/abc.txt
+
+# Show file type for all files
+
+$ find /tmp/find_practice -type f -exec file {} \;
+
+Day05/README.md: ASCII text
+Day05/logs/abc.log: empty
+Day05/logs/def.log: empty
+Day05/logs/jkl.log: empty
+Day05/logs/ghi.log: empty
+Day05/combined.txt: empty
+Day05/Day05-commmand: ASCII text
+Day05/Day05-command: ASCII text
+Day05/def.txt: empty
+Day05/content.txt: ASCII text
+Day05/test.txt: ASCII text
+Day05/abc.txt: empty
+
+# Delete all .log files
+
+$ find /tmp/find_practice -name "*.log" -exec rm {} \;
+
+$ cd Day05
+
+$ cd logs
+
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day05/logs
+
+$ ls 
+No files and directory
+

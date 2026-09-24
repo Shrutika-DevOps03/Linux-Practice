@@ -1,0 +1,26 @@
+File Viewing Commands:
+cat - Display and concatenate files
+head - View first lines
+tail - View last lines
+less - Advanced paged viewer (recommended)
+more - Simple paged viewer
+/etc/passwd Structure:
+Complete format breakdown: username:password:uid:gid:comment:home:shell
+Example explanations
+Common users and their UIDs
+Regular vs system accounts
+Practice Commands:
+Viewing files with cat, head, tail
+Combining files
+Analyzing system files
+Search patterns in less
+Key Takeaways:
+cat: Quick view, combining
+head/tail: First/last lines
+less: Large files (best choice)
+more: Simple viewing
+Advanced Techniques:
+tail -f for watching logs
+head | tail to get middle lines
+Piping commands together
+Line counting with wc -l
