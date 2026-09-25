@@ -1,0 +1,141 @@
+### Commands to Practice 
+
+### Simple Script Examples
+
+## Example 1: Basic Hello Script
+
+```
+# create hello.sh file 
+nano hello.sh
+
+#!/bin/bash
+# Simple hello world script
+
+$ echo "Hello, World!"
+
+# give +x permission to the file 
+chmod +x hello.sh
+
+# Run the script
+./hello.sh 		# (requires +x perm)
+-> Hello, World!
+``` 
+
+## Example 2: Script with Variables
+
+```
+#!/bin/bash
+# Script that uses variables
+
+$ name="Alice"
+$ age=25
+$ city="New York"
+
+$ echo "My name is $name"
+$ echo "I am $age years old"
+$ echo "I live in $city"
+
+# Run the script
+bash hello.sh 		# (Doesn't requires +x)
+
+->My name is Alice
+  I am 25 years old
+  I live in New York
+```
+
+## Example 3: Script with Multiple Commands
+
+```
+#!/bin/bash
+# Script demonstrating multiple commands
+
+$ echo "=== System Information ==="
+$ echo "Current date:"
+$ date
+$ echo ""
+$ echo "Current user:"
+$ whoami
+$ echo ""
+$ echo "Current directory:"
+$ pwd
+
+# Run the script 
+sh hello.sh 		# (doesn't requires +x)
+
+-> === System Information ===
+   Current date:
+   Fri Sep 25 06:20:11 UTC 2026
+
+   Current user:
+   shrutika_s_patankar
+
+   Current directory:
+   /home/shrutika_s_patankar/Linux-Practice/Day06
+```
+
+## Example 4: Script with Comments
+
+```
+#!/bin/bash
+# Purpose: Display user information
+# Author: Your Name
+# Date: Sept 25, 2026
+
+# Set user variables
+$ username="john"
+$ userid=1000
+$ usergroup="users"
+
+# Display information
+$ echo "Username: $username"
+$ echo "User ID: $userid"
+$ echo "User Group: $usergroup"
+
+# Display system info
+$ echo "System uptime:"
+$ uptime
+
+# Run the script
+sh hello.sh
+
+-> Username: john
+   Userid: 1000
+   Usergroup: users
+   System uptime:
+     06:30:06 up  1:02,  1 user,  load average: 0.00, 0.00, 0.00
+```
+
+## Example 5: Script with Comments and Variables
+
+```
+#!/bin/bash
+# Welcome script that greets user by name
+# Usage: ./welcome.sh
+
+# Set variables
+$ greeting="Welcome to Bash Scripting!"
+$ user_name="Sarah"
+$ favorite_language="Bash"
+
+# Print greeting
+$ echo "=========================================="
+$ echo "$greeting"
+$ echo "=========================================="
+$ echo ""
+$ echo "Hello, $user_name!"
+$ echo "You are learning $favorite_language"
+$ echo ""
+$ echo "Good luck with your scripting journey!"
+
+# Run the script 
+sh hello.sh
+
+-> ===================================
+   Welcome to Bash Scripting!
+   ===================================
+
+   Hello, Shrutika
+   You are learning Bash
+
+   Good luck with your scripting joirney!
+```
