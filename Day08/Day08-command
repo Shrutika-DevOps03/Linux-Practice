@@ -1,0 +1,193 @@
+## Create Test Environment 
+
+# Create test file with mixed content
+$ cat > ~/test_log.txt << 'EOF'
+2026-09-22 10:15:32 ERROR: Database connection failed
+2026-09-22 10:15:45 WARNING: High memory usage detected
+2026-09-22 10:16:10 INFO: User john logged in
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:16:45 INFO: Backup started
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:17:15 WARNING: Low disk space
+2026-09-22 10:18:00 INFO: System check complete
+2026-09-22 10:18:30 ERROR: Network timeout
+EOF
+
+$ cat > ~/config.txt << 'EOF'
+# Database Configuration
+# author: admin
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_NAME=myapp
+# User Configuration
+USER_ADMIN=true
+USER_DEBUG=false
+# Application Settings
+APP_VERSION=2.1.0
+EOF
+
+## Basic Searches :
+
+# Find error lines
+$ grep "ERROR" ~/test_log.txt
+->
+2026-09-22 10:15:32 ERROR: Database connection failed
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:18:30 ERROR: Network timeout
+
+# Find warnings (case-insensitive)
+$ grep -i "warning" ~/test_log.txt
+->
+2026-09-22 10:15:45 WARNING: High memory usage detected
+2026-09-22 10:17:15 WARNING: Low disk space
+
+# Count error 
+$ grep -c "ERROR" ~/test_log.txt
+->
+4
+
+# Show line numbers
+$ grep -n "ERROR" ~/test_log.txt
+-> 
+1:2026-09-22 10:15:32 ERROR: Database connection failed
+4:2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+6:2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+9:2026-09-22 10:18:30 ERROR: Network timeout
+
+# Find lines without "ERROR"
+$ grep  -v "ERROR" ~/test_log.txt
+->
+2026-09-22 10:15:45 WARNING: High memory usage detected
+2026-09-22 10:16:10 INFO: User john logged in
+2026-09-22 10:16:45 INFO: Backup started
+2026-09-22 10:17:15 WARNING: Low disk space
+2026-09-22 10:18:00 INFO: System check complete
+
+# Find non-comment lines in config
+$ grep -v "^#" ~/config.txt
+->
+2026-09-22 10:15:32 ERROR: Database connection failed
+2026-09-22 10:15:45 WARNING: High memory usage detected
+2026-09-22 10:16:10 INFO: User john logged in
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:16:45 INFO: Backup started
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:17:15 WARNING: Low disk space
+2026-09-22 10:18:00 INFO: System check complete
+2026-09-22 10:18:30 ERROR: Network timeout
+
+# Find configyration values
+$ grep "^[A-Z]" ~/config.txt
+->
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_NAME=myapp
+USER_ADMIN=true
+USER_DEBUG=false
+APP_VERSION=2.1.0
+DATABASE_HOST=localhost
+DATABASE_PORT=5432
+DATABASE_NAME=myapp
+USER_ADMIN=true
+USER_DEBUG=false
+APP_VERSION=2.1.0
+
+## Advanced Searches :
+
+# Find ERROR with context 
+$ grep -B 1 -A 1 "ERROR" ~/test_log.txt
+->
+2026-09-22 10:15:32 ERROR: Database connection failed
+2026-09-22 10:15:45 WARNING: High memory usage detected
+2026-09-22 10:16:10 INFO: User john logged in
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:16:45 INFO: Backup started
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:17:15 WARNING: Low disk space
+2026-09-22 10:18:00 INFO: System check complete
+2026-09-22 10:18:30 ERROR: Network timeout
+
+# Search case-insensitive with line numbers
+$ grep -in "error" ~/test_log.txt
+->
+1:2026-09-22 10:15:32 ERROR: Database connection failed
+4:2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+6:2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+9:2026-09-22 10:18:30 ERROR: Network timeout
+
+# Find multiple patterns
+$ grep -E "ERROR|WARNING" ~/test_log.txt
+->
+2026-09-22 10:15:32 ERROR: Database connection failed
+2026-09-22 10:15:45 WARNING: High memory usage detected
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:17:15 WARNING: Low disk space
+2026-09-22 10:18:30 ERROR: Network timeout
+
+# Find exact word
+$ grep -w "ERROR" ~/test-log.txt
+->
+2026-09-22 10:15:32 ERROR: Database connection failed
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:18:30 ERROR: Network timeout
+
+# Find lines starting with timestamp
+$ grep "^2026-09-22" 10:1[67]" ~/test_log.txt
+->
+2026-09-22 10:16:10 INFO: User john logged in
+2026-09-22 10:16:22 ERROR: File not found: /data/users.csv
+2026-09-22 10:16:45 INFO: Backup started
+2026-09-22 10:17:00 ERROR: Backup failed: Permission denied
+2026-09-22 10:17:15 WARNING: Low disk space
+
+## System Log Searches
+
+# Show last 5 errors
+$ grep "error" /var/log/syslog 2>/dev/null | tail -5
+->
+2026-09-26T08:10:37.595595+00:00 SHRUTIKA systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) skipped, unmet condition check ConditionPathExists=/var/lib/apport/autoreport
+2026-09-26T08:16:27.439408+00:00 SHRUTIKA ubuntu-insights[487]: 2026/09/26 08:16:27 WARN failed to run wsl.exe -v error="exit status 1"
+2026-09-28T01:36:14.170757+00:00 SHRUTIKA systemd[1]: apport-autoreport.path - Process error reports when automatic reporting is enabled (file watch) skipped, unmet condition check ConditionPathExists=/var/lib/apport/autoreport
+2026-09-28T01:36:14.170760+00:00 SHRUTIKA systemd[1]: apport-autoreport.timer - Process error reports when automatic reporting is enabled (timer based) skipped, unmet condition check ConditionPathExists=/var/lib/apport/autoreport
+2026-09-28T01:41:22.362772+00:00 SHRUTIKA ubuntu-insights[476]: 2026/09/28 01:41:22 WARN failed to run wsl.exe -v error="exit status 1"
+
+# Count errors by type
+$ grep "error" /var/log/syslog 2>/dev/null | cut -d: -f2 | sort | uniq -c
+->
+      2 01
+      1 03
+      2 05
+      3 06
+      3 10
+      1 11
+      2 12
+      1 13
+      3 16
+      3 17
+      3 18
+      2 20
+      5 21
+      3 22
+      2 23
+      1 24
+      1 25
+      2 27
+      1 28
+      1 29
+      2 32
+      2 35
+      3 36
+      1 41
+      2 43
+      2 47
+      5 49
+      3 50
+      1 53
+      3 55
+      3 56
+      2 57
+      1 58
+      1 59
