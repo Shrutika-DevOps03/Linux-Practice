@@ -1,0 +1,8 @@
+apple 12
+apple 10
+apple 9
+date 7
+banana 5
+banana 3
+cherry8
+New Lines
