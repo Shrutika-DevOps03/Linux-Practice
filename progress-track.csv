@@ -6,3 +6,5 @@ Day  Topic                              Time_Spent_Min    Scripts/Files_Written 
 5    Search & Find                      45                5 files                    Beginner           Yes
 6    Bash Script Basics                 60                1 Scripts                  Beginner           Yes
 7    Scenario: File Backup              60                7 Scripts                  Beginner           Yes
+8
+9    Pipes & Input/Output Redirection   60                1 Script & 9 files         Begi-Inter         Yes
