@@ -28,3 +28,46 @@ drwxr-xr-x 33 shrutika_s_patankar shrutika_s_patankar 4096 Sep 17 15:25 ..
 -rw-r--r--  1 shrutika_s_patankar shrutika_s_patankar  337 Sep 19 03:24 Day01-command
 -rw-r--r--  1 shrutika_s_patankar shrutika_s_patankar  754 Sep 17 02:58 README.md
 drwxr-xr-x  2 shrutika_s_patankar shrutika_s_patankar 4096 Sep 16 10:50 scripts,notes}
+
+
+Day02-command 
+
+$ touch Day02-command
+$ touch README.md
+
+$ mkdir -p India/{MH, UP, MP}
+$ cd India
+
+# To know in which directory we are working
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cd {MH,
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/{MH,
+
+# Create files to do copy opration (cp)
+$ touch abc.txt def.txt ghi.txt hjk.tx
+$ ls
+adc.txt         def.txt          ghi.txt
+
+## Copy the files
+# If we are not in that directory / In main directory (India)
+
+$ cd India
+$ pwd
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
+
+$ cp {MH,/abc.txt UP/
+$ cd UP
+/home/shrutika_s_patankar/Linux-Practice/Day02/India/UP
+
+$ ls
+abc.txt
+
+# If we are in the directory / In {MH,
+$ cd ..
+$ cd {MH,
+$ cp def.txt ../UP/
+
+$ cd ..
+/home/shrutika_s_patankar/Linux-Practice/Day02/India
