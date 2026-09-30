@@ -32,7 +32,6 @@ EOF
 
 		## SED Practice : ##
 
-
 # Simple replacement
 
 sed 's/apple/orenge/' test_data.txt
@@ -54,14 +53,12 @@ banana 3 yellow
 # Case-insensitive
 
 sed 's/APPLE/orenge/i' test_data.txt
-:<< 'COMMENT'
 ->
 orenge 10 red
 banana 5 yellow
 orenge 12 red
 cherry 8 red
 banana 3 yellow
-'COMMENT'
 
 # In-place with backup
 
