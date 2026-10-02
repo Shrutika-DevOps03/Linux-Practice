@@ -524,7 +524,11 @@ getent group sudo
 ```
 
 ## Struggle Points
+1. Forgetting sudo for User/Group Commands
+Beginners run useradd alice or groupadd developers without sudo, getting "Permission denied" error and thinking the command is broken. They don't realize user/group management requires root privileges, and every command needs sudo useradd, sudo groupadd, etc.
 
+2. Using -g Instead of -aG - Accidentally Removes User from All Groups
+Students add user to a group with usermod -g docker alice expecting to add docker, but -g replaces the primary group entirely, removing alice from other groups. They should use -aG docker alice (append to groups), not -g (change primary group only).
 
 ## Notes
 - Always use `sudo` for user/group management
